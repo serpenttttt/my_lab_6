@@ -47,10 +47,10 @@ int main() {
             printf("b is %d now\n", data_int[1]);
             break;
         default:
-            puts("Unknown type\n");
+            puts("Unknown type");
     }
 
-    puts("\nTask 2\n");
+    puts("\nTask 2");
 
     int array[5] = {1,2,3,4,5};
     puts("Input the element you want to find with binary search (1-5)");
@@ -62,14 +62,29 @@ int main() {
 
     find_with_binary_search(value, array, lower, upper);
 
-    puts("\nTask 3\n");
+    puts("\nTask 3");
 
-    /*int quick_sort_array[8] = {4,2,5,1,3,7,6,8};
+    int *quick_sort_array = NULL;
+    int amount_of_elements;
+    puts("Enter the amount of elements, please");
+    getchar();
+    scanf("%d", &amount_of_elements);
+    quick_sort_array = (int *) malloc(sizeof(int) * amount_of_elements);
 
-    int pivot = quick_sort_array[sizeof(quick_sort_array)/sizeof(quick_sort_array[0])];
+    input_array(amount_of_elements, quick_sort_array);
 
-    int left[sizeof(quick_sort_array)/sizeof(quick_sort_array[0]) - 1];
-    int right[sizeof(quick_sort_array)/sizeof(quick_sort_array[0]) - 1];*/
+    int left = 0;
+    int right = amount_of_elements;
+
+    puts("You have entered:");
+    show_array(amount_of_elements, quick_sort_array);
+
+    quick_sort_array = quick_sort(quick_sort_array, left, right);
+
+    puts("\nSorted:");
+    show_array(amount_of_elements, quick_sort_array);
+
+    puts("\n\nTask 4");
 
     return 0;
 }
