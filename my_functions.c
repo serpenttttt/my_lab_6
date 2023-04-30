@@ -140,12 +140,14 @@ int *counting_sort(int *array, int amount_of_elements) {
     for (int i = 0; i < amount_of_elements; ++i)
         count_array[array[i] - min] += 1;
 
-    for (int i = 1; i < size_of_count_array; ++i)
-        count_array[i] += count_array[i - 1];
-
-    for (int i = 0; i < amount_of_elements; i++) {
-        array_counting_sort[count_array[array[i] - min] - 1] = array[i];
-        count_array[array[i] - min] -= 1;
+    int j = 0;
+    for (int i = 0; i < size_of_count_array; i++) {
+        while (count_array[i] > 0) {
+            array_counting_sort[j] = min;
+            j++;
+            count_array[i]--;
+        }
+        min++;
     }
 
     return array_counting_sort;
