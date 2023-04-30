@@ -24,7 +24,7 @@ int main() {
         case 1:
 
             puts("Enter 2 strings");
-            getchar();
+            fflush(stdin);
 
             input_string(data_char_1);
             input_string(data_char_2);
@@ -67,8 +67,10 @@ int main() {
             break;
 
         default:
-            getchar();
+
+            fflush(stdin);
             puts("Unknown type");
+
     }
 
     puts("\nTask 2\n"
@@ -84,7 +86,7 @@ int main() {
 
         int value;
 
-        getchar();
+        fflush(stdin);
         puts("\nInput the element you want to find with binary search");
         scanf("%d", &value);
 
@@ -99,7 +101,8 @@ int main() {
 
     int *quick_sort_array;
 
-    getchar();
+    fflush(stdin);
+
     if (scanf("%d", &amount_of_elements)) {
 
         quick_sort_array = (int *) malloc(sizeof(int) * amount_of_elements);
@@ -124,7 +127,8 @@ int main() {
 
     int *sort_array;
 
-    getchar();
+    fflush(stdin);
+
     if (scanf("%d", &amount_of_elements)) {
 
         sort_array = (int *) malloc(sizeof(int) * amount_of_elements);
