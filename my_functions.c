@@ -33,8 +33,11 @@ void input_array(int amount_of_elements, int *array) {
     int input;
     for (int i = 0; i < amount_of_elements; ++i) {
         puts("Enter an element");
-        scanf("%d", &input);
-        array[i] = input;
+        if (scanf("%d", &input)) {
+            fflush(stdin);
+            array[i] = input;
+        }
+        else return;
     }
 }
 

@@ -20,6 +20,8 @@ int main() {
 
     scanf("%d", &type);
 
+    fflush(stdin);
+
     switch (type) {
         case 1:
 
@@ -42,7 +44,9 @@ int main() {
 
             float data_float[2];
             scanf("%f", &data_float[0]);
+            fflush(stdin);
             scanf("%f", &data_float[1]);
+            fflush(stdin);
 
             swap(float, data_float[0], data_float[1])
 
@@ -57,7 +61,9 @@ int main() {
 
             int data_int[2];
             scanf("%d", &data_int[0]);
+            fflush(stdin);
             scanf("%d", &data_int[1]);
+            fflush(stdin);
 
             swap(int, data_int[0], data_int[1])
 
@@ -67,11 +73,10 @@ int main() {
             break;
 
         default:
-
-            fflush(stdin);
             puts("Unknown type");
-
+            fflush(stdin);
     }
+
 
     puts("\nTask 2\n"
          "Enter the amount of elements, please");
@@ -81,6 +86,8 @@ int main() {
 
     if (scanf("%d", &amount_of_elements)) {
 
+        fflush(stdin);
+
         binary_search_array = (int *) malloc(sizeof(int) * amount_of_elements);
         input_array(amount_of_elements, binary_search_array);
 
@@ -89,6 +96,7 @@ int main() {
         fflush(stdin);
         puts("\nInput the element you want to find with binary search");
         scanf("%d", &value);
+        fflush(stdin);
 
         int lower = 0;
 
@@ -104,6 +112,8 @@ int main() {
     fflush(stdin);
 
     if (scanf("%d", &amount_of_elements)) {
+
+        fflush(stdin);
 
         quick_sort_array = (int *) malloc(sizeof(int) * amount_of_elements);
 
@@ -130,6 +140,8 @@ int main() {
     fflush(stdin);
 
     if (scanf("%d", &amount_of_elements)) {
+
+        fflush(stdin);
 
         sort_array = (int *) malloc(sizeof(int) * amount_of_elements);
 
